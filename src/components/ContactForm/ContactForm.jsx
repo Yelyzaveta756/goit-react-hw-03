@@ -29,7 +29,7 @@ const ContactForm = ({ onAddContact }) => {
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={FeedbackSchema}>
       <Form className={css.form}>
-        <label htmlFor="name" className={css.label}>Name</label>
+        <label htmlFor="name" className={css.labelfirst}>Name</label>
         <Field type="text" name="name" id="name" className={css.input} />
         <ErrorMessage name="name" component="span" className={css.error} />
 
