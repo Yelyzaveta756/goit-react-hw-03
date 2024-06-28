@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import SearchBar from './components/SearchBar/SearchBar'
@@ -13,7 +13,17 @@ function App() {
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ];
 
-  const [contacts, setContacts] = useState(initialContacts);
+  const [contacts, setContacts] = useState(() => {
+    const contactsLocalStorage = window.localStorage.getItem('contacts-list');
+    if (contactsLocalStorage === null) {
+      return initialContacts;
+    }else return JSON.parse(contactsLocalStorage);
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem('contacts-list', JSON.stringify(contacts));
+  }, [contacts]);
+
   const [filter, setFilter] = useState('');
 
   const addContact = (newContact) => {
