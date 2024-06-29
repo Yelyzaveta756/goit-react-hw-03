@@ -1,7 +1,7 @@
 @import url(./components/Contact/Contact.module.css);
 @import url(./components/ContactForm/ContactForm.module.css);
 @import url(./components/ContactList/ContactList.module.css);
-@import url(./components/SearchBar/SearchBar.module.css);
+@import url(./components/SearchBox/SearchBox.module.css);
 
 #root {
   max-width: 1280px;

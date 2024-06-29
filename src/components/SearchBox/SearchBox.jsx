@@ -1,6 +1,6 @@
 import { useState } from "react"
-import css from './SearchBar.module.css'
-export default function SearchBar({search, onSearch}){
+import css from './SearchBox.module.css'
+export default function SearchBox({search, onSearch}){
 
     
     return (
